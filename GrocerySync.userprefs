@@ -1,0 +1,29 @@
+﻿<Properties StartupItem="iOS/GrocerySync.iOS.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="GrocerySync.sln">
+    <Files>
+      <File FileName="GrocerySync.Forms/Views/RootPage.xaml" Line="6" Column="66" />
+      <File FileName="GrocerySync/ViewModels/RootViewModel.cs" Line="69" Column="79" />
+      <File FileName="iOS/Main.cs" Line="37" Column="1" />
+      <File FileName="iOS/packages.config" Line="1" Column="1" />
+      <File FileName="GrocerySync.Forms/Views/RootPage.xaml.cs" Line="37" Column="1" />
+      <File FileName="GrocerySync.Forms/Views/ConfigPage.xaml" Line="8" Column="75" />
+      <File FileName="GrocerySync.Forms/Views/ConfigPage.xaml.cs" Line="41" Column="15" />
+      <File FileName="GrocerySync/ViewModels/ConfigViewModel.cs" Line="45" Column="40" />
+      <File FileName="packages/Xam.Plugins.Settings.2.1.0/readme.txt" Line="1" Column="1" />
+      <File FileName="GrocerySync/Helpers/Settings.cs" Line="5" Column="22" />
+      <File FileName="GrocerySync.Forms/Views/ViewModelPage.cs" Line="27" Column="27" />
+      <File FileName="Droid/MvxFormsApplicationActivity.cs" Line="45" Column="30" />
+      <File FileName="Droid/Setup.cs" Line="30" Column="44" />
+      <File FileName="Droid/obj/Debug/GrocerySync.Droid..Users.borrrden.Development.GrocerySync.GrocerySync.Forms.Views.ConfigPage.xaml.g.cs" Line="17" Column="26" />
+      <File FileName="Droid/SplashScreen.cs" Line="14" Column="59" />
+      <File FileName="GrocerySync.sln" Line="10" Column="104" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.GrocerySync.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.192.168.58.101:5555" />
+  <MonoDevelop.Ide.ItemProperties.GrocerySync.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.63A2904C-2EEB-4CA2-9711-2ACA62463652" />
+</Properties>

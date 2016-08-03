@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<d:ViewModelPage x:TypeArguments="d:RootViewModel" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+		     xmlns:d="clr-namespace:GrocerySync"
+             x:Class="GrocerySync.RootPage">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Config" Command="{Binding ConfigCommand}" />
+        <ToolbarItem Text="Clean" Command="{Binding CleanItemCommand}" />
+	</ContentPage.ToolbarItems>
+	<RelativeLayout>
+		<Image Source="{Binding BGImage}" 
+			RelativeLayout.XConstraint="{ConstraintExpression Type=Constant, Constant=0}" 
+			RelativeLayout.YConstraint="{ConstraintExpression Type=Constant, Constant=0}"
+			RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1.0}"
+			RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1.0}"
+			Aspect="Fill" />
+        <StackLayout>
+            <Entry Placeholder="Add Item..." BackgroundColor="Transparent" Text="{Binding NewItemText, Mode=TwoWay}" Completed="AddNewItem" />
+    		<ListView ItemsSource="{Binding Items}" 
+					BackgroundColor="Transparent" 
+					x:Name="GroceryList"
+					SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+					Header="{Binding .}">
+				<ListView.HeaderTemplate>
+					<DataTemplate>
+					    <Label TextColor="Black"
+							    Text="{Binding DoneText}" />
+					</DataTemplate>
+				</ListView.HeaderTemplate>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+							<ViewCell.ContextActions>
+                                <MenuItem Clicked="DeleteCell" CommandParameter="{Binding .}"
+										IsDestructive="true" Text="Delete" />
+							</ViewCell.ContextActions>
+                            <Grid BackgroundColor="Transparent">
+									<Image Source="{Binding BackgroundImage}" 
+                                        Grid.ColumnSpan="2"
+                                        Aspect="Fill" />
+    								<Grid Padding="15,0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+            								<ColumnDefinition Width="Auto" />
+            							</Grid.ColumnDefinitions>
+            							<Label Text="{Binding Label}" TextColor="Black" VerticalOptions="Center" Grid.Column="1" />
+        								<Image Source="{Binding CheckboxImage}" />
+    								</Grid>
+    						</Grid>
+    					</ViewCell>
+    				</DataTemplate>
+    			</ListView.ItemTemplate>
+    		</ListView>
+	    </StackLayout>
+    </RelativeLayout>
+</d:ViewModelPage>
