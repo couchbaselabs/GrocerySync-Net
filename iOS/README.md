@@ -1,1 +1,0 @@
-This is a very simple app using Couchbase Lite .NET on multiple platforms.  Currently it runs on Android and iOS, with WPF planned soon.  It is running with Couchbase Lite .NET 1.3.0 but you can drop in any of our [nightly builds](http://latestbuilds.hq.couchbase.com/couchbase-lite-net/) and create a local feed to use those if you are so inclined.
