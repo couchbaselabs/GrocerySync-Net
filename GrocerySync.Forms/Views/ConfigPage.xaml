@@ -1,15 +1,19 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <d:ViewModelPage x:TypeArguments="d:ConfigViewModel" xmlns="http://xamarin.com/schemas/2014/forms" 
-		xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-		xmlns:d="clr-namespace:GrocerySync"
-		x:Class="GrocerySync.ConfigPage"
-		BackgroundColor="White">
-	<ContentPage.ToolbarItems>
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:d="clr-namespace:GrocerySync"
+                 xmlns:util="clr-namespace:GrocerySync.Util"
+        x:Class="GrocerySync.ConfigPage"
+        BackgroundColor="White">
+    <ContentPage.UserResources>
+        <util:EnumToColorConverter x:Key="EnumToColor" />
+    </ContentPage.UserResources>
+    <ContentPage.ToolbarItems>
         <ToolbarItem Text="Save" Command="{Binding SaveCommand}" />
-	</ContentPage.ToolbarItems>
+    </ContentPage.ToolbarItems>
     <StackLayout HorizontalOptions="FillAndExpand">
         <Label Text="Enter the URL for synchronization here:" TextColor="Black"  />
-        <Entry Placeholder="Endpoint URL..." Text="{Binding SyncURL, Mode=TwoWay}" TextColor="{Binding URLIndicatorColor}"
-				PlaceholderColor="Gray" />
-	</StackLayout>
+        <Entry Placeholder="Endpoint URL..." Text="{Binding SyncURL, Mode=TwoWay}" TextColor="{Binding URLIndicatorColor, Converter={StaticResource EnumToColor}}"
+                PlaceholderColor="Gray" />
+    </StackLayout>
 </d:ViewModelPage>

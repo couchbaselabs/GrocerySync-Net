@@ -28,7 +28,13 @@ using Couchbase.Lite;
 using GrocerySync.Helpers;
 using MvvmCross.Core.ViewModels;
 using Newtonsoft.Json.Linq;
+using System.Reflection;
+#if FORMS
 using Xamarin.Forms;
+#else
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+#endif
 
 namespace GrocerySync
 {
@@ -78,7 +84,11 @@ namespace GrocerySync
         {
             get
             {
+#if FORMS
                 return ImageSource.FromFile("background.jpg");
+#else
+                return new BitmapImage(new Uri($"pack://application:,,,/{Assembly.GetExecutingAssembly().GetName()};component/Images/background.jpg", UriKind.Absolute));
+#endif
             }
         }
 
@@ -404,7 +414,11 @@ namespace GrocerySync
         {
             get
             {
+#if FORMS
                 return ImageSource.FromFile("item_background.png");
+#else  
+                return new BitmapImage(new Uri($"pack://application:,,,/{Assembly.GetExecutingAssembly().GetName()};component/Images/item_background.png", UriKind.Absolute));
+#endif
             }
         }
 
@@ -412,9 +426,14 @@ namespace GrocerySync
         {
             get
             {
+#if FORMS
                 return IsChecked ?
                     ImageSource.FromFile("list_area___checkbox___checked.png") :
                     ImageSource.FromFile("list_area___checkbox___unchecked.png");
+#else
+                var imageName = IsChecked ? "list_area___checkbox___checked.png" : "list_area___checkbox___unchecked.png";
+                return new BitmapImage(new Uri($"pack://application:,,,/{Assembly.GetExecutingAssembly().GetName()};component/Images/{imageName}", UriKind.Absolute));
+#endif
             }
         }
 

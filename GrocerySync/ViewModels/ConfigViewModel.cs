@@ -23,25 +23,35 @@ using System.Windows.Input;
 using GrocerySync.Helpers;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
-using Xamarin.Forms;
 
 namespace GrocerySync
 {
+    public enum Color
+    {
+        Green,
+        Red
+    }
+
     public class ConfigViewModel : BaseViewModel
     {
-        private Uri _syncUrl;
+        public ICommand BackCommand
+        {
+            get { return new MvxCommand(() => ShowViewModel<RootViewModel>()); }
+        }
+
+        private string _syncUrl;
         public string SyncURL
         {
             get
             {
-                return _syncUrl?.OriginalString;
+                return _syncUrl;
             }
             set
             {
                 Uri outUri;
                 var valid = Uri.TryCreate(value, UriKind.Absolute, out outUri);
                 URLIndicatorColor = valid ? Color.Green : Color.Red;
-                SetProperty(ref _syncUrl, outUri);
+                SetProperty(ref _syncUrl, value);
             }
         }
 
@@ -73,7 +83,9 @@ namespace GrocerySync
 
         private void Save()
         {
-            Settings.SyncURL = SyncURL;
+            if(URLIndicatorColor == Color.Green) {
+                Settings.SyncURL = SyncURL;
+            }
         }
     }
 }
