@@ -188,11 +188,15 @@
     </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\list_area___checkbox___checked.png" />
-    <Resource Include="Images\list_area___checkbox___unchecked.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\item_background.png" />
+    <Resource Include="..\..\GrocerySync.Forms\Images\item_background.png">
+      <Link>Images\item_background.png</Link>
+    </Resource>
+    <Resource Include="..\..\GrocerySync.Forms\Images\list_area___checkbox___checked.png">
+      <Link>Images\list_area___checkbox___checked.png</Link>
+    </Resource>
+    <Resource Include="..\..\GrocerySync.Forms\Images\list_area___checkbox___unchecked.png">
+      <Link>Images\list_area___checkbox___unchecked.png</Link>
+    </Resource>
   </ItemGroup>
   <Import Project="..\..\GrocerySync\GrocerySync.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
